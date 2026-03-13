@@ -2,6 +2,7 @@
 list: https://b.hatena.ne.jp/hotentry/it.rss
 conecter_type: rss-fetch
 category: IT
+subcategory: "AI, Claude Code, クラウド・インフラ, 開発ツール・プラクティス, セキュリティ, その他"
 get_data: "テクノロジー・プログラミング・AI・開発に関する記事を取得する"
 block_data: "広告・PR記事は除外する"
 ---
@@ -11,4 +12,17 @@ category: IT
 lang: en
 get_data: "AI・LLM・プログラミングに関する記事を取得する"
 block_data: "求人・Show HN は除外する"
+---
+list: https://dev.to/feed
+conecter_type: rss-fetch
+category: IT
+lang: en
+get_data: "AI・LLM・プログラミング・開発ツールに関する記事を取得する"
+block_data: "広告・PR記事は除外する"
+---
+list: https://zenn.dev/api/articles?order=daily
+conecter_type: api-fetch
+category: IT
+get_data: "テクノロジー・プログラミング・AI・開発に関する記事を取得する"
+block_data: "広告・PR記事は除外する"
 ---
