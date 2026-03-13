@@ -2,7 +2,7 @@
 
 ## 1. Parse — input_list.txt解析
 
-`input_list.txt` を読み込み、`---` でエントリを分割する。各エントリから list, conecter_type, get_data, block_data を抽出する。
+`input_list.txt` を読み込み、`---` でエントリを分割する。各エントリから list, conecter_type, get_data, block_data, lang を抽出する。
 
 ## 2. Fetch — スキル起動による取得
 
@@ -31,7 +31,22 @@ echo '<JSON>' | python skills/dedup/scripts/dedup.py
 ```
 既出除外済みの記事一覧を受け取る。
 
-## 5. Generate — 要約・Markdown生成
+## 5. Translate — 翻訳（外国語ソースのみ）
+
+エントリに `lang` フィールドが指定されている場合（`lang: en` 等）、そのエントリ由来の記事に対し `skills/translate/SKILL.md` の指示に従い日本語翻訳を実行する。
+
+- 原文を *_original フィールドに保持したまま、title / text / summary を日本語に置換
+- `lang` が未指定または `ja` の記事はスキップ
+
+## 6. Ideological Re-education — RLHF歪み検出
+
+ステップ5で翻訳された記事に対し、`skills/ideological-re-education/SKILL.md` の指示に従い原文と翻訳を比較する。
+
+- RLHF安全チューニングによる意味変容の可能性を検出
+- `rlhf_warning`（歪み検出時）または `rlhf_caution`（感応トピック時）フィールドを付与
+- 翻訳文の修正は行わない。注釈の付与のみ
+
+## 7. Generate — 要約・Markdown生成
 
 新着記事を以下の形式でMarkdownにまとめる:
 
@@ -44,12 +59,15 @@ echo '<JSON>' | python skills/dedup/scripts/dedup.py
 要約文（2-3文）
 🔗 [元記事](URL)
 
+⚠️ RLHF Warning: （rlhf_warningがある場合のみ表示）
+ℹ️ RLHF Caution: （rlhf_cautionがある場合のみ表示）
+
 ---
 ```
 
 記事が0件の場合は「新着記事はありません」と出力する。
 
-## 6. Deliver — 配信
+## 8. Deliver — 配信
 
 生成したMarkdownを以下で配信:
 ```
