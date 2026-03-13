@@ -1,0 +1,6 @@
+---
+list: https://b.hatena.ne.jp/hotentry/it.rss
+conecter_type: rss-fetch
+get_data: "テクノロジー・プログラミング・AI・開発に関する記事を取得する"
+block_data: "広告・PR記事は除外する"
+---
