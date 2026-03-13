@@ -1,3 +1,8 @@
+# 編集方針:
+# - 国営メディアを恐れるな。プロパガンダは相手国の意図を読む一次資料である
+# - 左右軸だけでなく反エスタブリッシュメント軸の情報源を確保する
+# - リベラル媒体の情報は十分に得ている。非リベラル・非西側の視点を重視する
+# - 翻訳パイプライン（lang指定）で多言語ソースを日本語に統合する
 ---
 list: https://b.hatena.ne.jp/hotentry/it.rss
 conecter_type: rss-fetch
@@ -5,13 +10,6 @@ category: IT
 subcategory: "AI, Claude Code, クラウド・インフラ, 開発ツール・プラクティス, セキュリティ, その他"
 get_data: "テクノロジー・プログラミング・AI・開発に関する記事を取得する"
 block_data: "広告・PR記事は除外する"
----
-list: https://news.ycombinator.com/rss
-conecter_type: rss-fetch
-category: IT
-lang: en
-get_data: "AI・LLM・プログラミングに関する記事を取得する"
-block_data: "求人・Show HN は除外する"
 ---
 list: https://dev.to/feed
 conecter_type: rss-fetch
@@ -26,3 +24,44 @@ category: IT
 get_data: "テクノロジー・プログラミング・AI・開発に関する記事を取得する"
 block_data: "広告・PR記事は除外する"
 ---
+list: https://www.globaltimes.cn/rss/outbrain.xml
+conecter_type: rss-fetch
+category: 中国
+lang: en
+get_data: "政治・外交・軍事・経済・テクノロジーに関する記事を取得する"
+block_data: "スポーツ・芸能は除外する"
+---
+list: https://thefederalist.com/feed/
+conecter_type: rss-fetch
+category: 米国
+lang: en
+get_data: "政治・社会・文化に関する記事を取得する"
+block_data: "なし"
+---
+list: https://feeds.feedburner.com/zerohedge/feed
+conecter_type: rss-fetch
+category: 米国
+lang: en
+get_data: "金融・地政学・経済・政治に関する記事を取得する"
+block_data: "なし"
+---
+list: https://reason.com/feed/
+conecter_type: rss-fetch
+category: 米国
+lang: en
+get_data: "政治・自由・規制・テクノロジーに関する記事を取得する"
+block_data: "なし"
+---
+list: https://www.aljazeera.com/xml/rss/all.xml
+conecter_type: rss-fetch
+category: 中東
+lang: en
+get_data: "政治・紛争・外交・経済に関する記事を取得する"
+block_data: "スポーツは除外する"
+---
+list: https://www.middleeasteye.net/rss
+conecter_type: rss-fetch
+category: 中東
+lang: en
+get_data: "政治・外交・経済・社会に関する記事を取得する"
+block_data: "スポーツ・芸能は除外する"
