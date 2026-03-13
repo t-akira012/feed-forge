@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Daily Digest</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style>
+  @charset "UTF-8";
+
+  :root {
+    --text: #1a1a1a;
+    --bg: #faf8f5;
+    --border: #c8c0b4;
+    --accent: #8b0000;
+    --sub: #555;
+    --ogp-h: 80px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", "Times New Roman", serif;
+    color: var(--text);
+    background: var(--bg);
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+    line-height: 1.7;
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0.15em;
+    border-top: 3px double var(--border);
+    border-bottom: 3px double var(--border);
+    padding: 16px 0;
+    margin-bottom: 32px;
+  }
+
+  h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--accent);
+    border-left: 4px solid var(--accent);
+    padding-left: 10px;
+    margin: 36px 0 16px;
+  }
+
+  /* 3-column card grid: each .level2 section is a grid container */
+  section.level2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  section.level2 > h2 {
+    grid-column: 1 / -1;
+  }
+
+  /* Each article card */
+  section.level3 {
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 8px;
+    background: #fff;
+    overflow: hidden;
+  }
+
+  section.level3 hr {
+    display: none;
+  }
+
+  h3 {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.5;
+    margin: 6px 0 0;
+  }
+
+  h3 a {
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  h3 a:hover {
+    color: var(--accent);
+  }
+
+  p {
+    margin: 4px 0 8px;
+    color: var(--sub);
+    font-size: 12px;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 12px 0;
+  }
+
+  blockquote {
+    border-left: 3px solid var(--border);
+    padding-left: 12px;
+    color: var(--sub);
+    font-style: italic;
+    margin: 12px 0;
+  }
+
+  /* OGP image in card */
+  figure {
+    margin: 0;
+    width: 100%;
+    min-height: var(--ogp-h);
+    background: #eee;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  figure img {
+    display: block;
+    width: 100%;
+    height: var(--ogp-h);
+    object-fit: cover;
+  }
+
+  figcaption {
+    display: none;
+  }
+
+  /* RLHF annotations */
+  .rlhf-warning {
+    background: #fff3cd;
+    border-left: 4px solid #d4a017;
+    padding: 8px 12px;
+    margin: 8px 0;
+    font-size: 12px;
+  }
+
+  .rlhf-caution {
+    background: #e8f4fd;
+    border-left: 4px solid #5b9bd5;
+    padding: 8px 12px;
+    margin: 8px 0;
+    font-size: 12px;
+  }
+
+  /* pandoc title block header */
+  header#title-block-header { display: none; }
+
+  @media (max-width: 700px) {
+    section.level2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    section.level2 {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media print {
+    body { max-width: 100%; padding: 20px; }
+    h3 a { border-bottom: none; }
+  }
+
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Daily Digest</h1>
+</header>
+<section id="daily-digest-2026-03-13" class="level1">
+<h1>Daily Digest — 2026-03-13</h1>
+<section id="aillm" class="level2">
+<h2>AI・LLM</h2>
+<section id="google-マップが大幅アップデートgeminiと融合"
+class="level3">
+<h3><a
+href="https://k-tai.watch.impress.co.jp/docs/news/2093079.html">「Google
+マップ」が大幅アップデート、Geminiと融合</a></h3>
+<figure>
+<img
+src="https://k-tai.watch.impress.co.jp/img/ktw/list/2093/079/001.jpg"
+alt="OGP" />
+<figcaption aria-hidden="true">OGP</figcaption>
+</figure>
+<hr />
+</section>
+<section
+id="aiエージェントの内部構造長時間タスクを完遂させるエージェントハーネスの概要と設計実装"
+class="level3">
+<h3><a
+href="https://codezine.jp/article/detail/23340">【AIエージェントの内部構造】長時間タスクを完遂させる「エージェントハーネス」の概要と設計・実装</a></h3>
+<figure>
+<img
+src="https://codezine.jp/static/images/article/23340/AI1200_ogp.png"
+alt="OGP" />
+<figcaption aria-hidden="true">OGP</figcaption>
+</figure>
+<hr />
+</section>
+<section
+id="gpt-ossの推論を6倍速にthinking-off設定とollamaで効かない理由"
+class="level3">
+<h3><a
+href="https://qiita.com/ntaka329/items/35f156dbe526121e66f5">gpt-ossの推論を6倍速に。Thinking
+OFF設定と、Ollamaで効かない理由</a></h3>
+<figure>
+<img
+src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+alt="OGP" />
+<figcaption aria-hidden="true">OGP</figcaption>
+</figure>
+<hr />
+</section>
+<section
+id="生成aiツールcomfyuiの複雑怪奇なuiをスッキリ分かりやすくできる公式機能app-modeが登場"
+class="level3">
+<h3><a
+href="https://gigazine.net/news/20260312-comfyui-app-mode/">生成AIツール「ComfyUI」の複雑怪奇なUIをスッキリ分かりやすくできる公式機能「App
+Mode」が登場</a></h3>
+<figure>
+<img
+src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+alt="OGP" />
+<figcaption aria-hidden="true">OGP</figcaption>
+</figure>
+<hr />
+</section>
+<section id="ネット詐欺のターゲットは人間ではなくaiエージェントに"
+class="level3">
+<h3><a
+href="https://internet.watch.impress.co.jp/docs/column/netliteracy/2091933.html">ネット詐欺のターゲットは人間ではなく、AIエージェントに？</a></h3>
+<figure>
+<img
+src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+alt="OGP" />
+<figcaption aria-hidden="true">OGP</figcaption>
+</figure>
+<hr />
+</section>
+<section id="外出先の非力なノートpcで自宅の大型llmを動かすlm-link登場"
+class="level3">
+<h3><a
+href="https://pc.watch.impress.co.jp/docs/column/nishikawa/2092683.html">外出先の非力なノートPCで自宅の大型LLMを動かす「LM
+Link」登場</a></h3>
+<figure>
+<img
+src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+alt="OGP" />
+<figcaption aria-hidden="true">OGP</figcaption>
+</figure>
+<hr />
+</section>
+<section id="イランgoogleやnvidiaなど米7社標的名指し-ai企業に攻撃リスク"
+class="level3">
+<h3><a
+href="https://www.nikkei.com/article/DGXZQOUC12CHH0S6A310C2000000/">イラン、GoogleやNVIDIAなど米7社標的名指し　AI企業に攻撃リスク</a></h3>
+<figure>
+<img
+src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+alt="OGP" />
+<figcaption aria-hidden="true">OGP</figcaption>
+</figure>
+<hr />
+</section>
+</section>
+<section id="claude-code" class="level2">
+<h2>Claude Code</h2>
+<section
+id="anthropic公式のclaude-code-pluginが増えてたので改めて眺める2026年3月"
+class="level3">
+<h3><a
+href="https://dev.classmethod.jp/articles/claude-plugins-official-view-2026-03/">Anthropic公式のClaude
+Code Pluginが増えてたので、改めて眺める（2026年3月）</a></h3>
+<figure>
+<img
+src="https://images.ctfassets.net/ct0aopd36mqt/3KBTm8tdpO9RJJuaVvVzod/a9964bb03097b448b2327edc6920bf9f/Claude.png"
+alt="OGP" />
+<figcaption aria-hidden="true">OGP</figcaption>
+</figure>
+<hr />
+</section>
+<section
+id="claude-codeのセッション履歴が30日で消えると知って9999日に変えた話"
+class="level3">
+<h3><a href="https://note.com/cute_agapan9087/n/nf54c17fc5f43">Claude
+Codeのセッション履歴が30日で消えると知って9999日に変えた話</a></h3>
+<figure>
+<img
+src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+alt="OGP" />
+<figcaption aria-hidden="true">OGP</figcaption>
+</figure>
+<hr />
+</section>
+<section id="claude-code-2026年-最新アップデート" class="level3">
+<h3><a href="https://speakerdeck.com/oikon48/claude-code-0312">Claude
+Code 2026年 最新アップデート</a></h3>
+<figure>
+<img
+src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+alt="OGP" />
+<figcaption aria-hidden="true">OGP</figcaption>
+</figure>
+<hr />
+</section>
+<section
+id="claude-code-のコード品質がばらつくので-ai-に品質保証させる仕組みを作った話"
+class="level3">
+<h3><a
+href="https://speakerdeck.com/nrslib/a-story-about-building-a-mechanism-to-have-ai-ensure-quality-because-the-code-quality-from-claude-code-was-inconsistent">Claude
+Code のコード品質がばらつくので AI
+に品質保証させる仕組みを作った話</a></h3>
+<figure>
+<img
+src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+alt="OGP" />
+<figcaption aria-hidden="true">OGP</figcaption>
+</figure>
+<hr />
+</section>
+<section
+id="社員に何もさせずにclaude-code利用ログを集める-数百名規模のopentelemetry収集基盤の構築"
+class="level3">
+<h3><a
+href="https://techblog.zozo.com/entry/claudecode-otel">社員に何もさせずにClaude
+Code利用ログを集める ── 数百名規模のOpenTelemetry収集基盤の構築</a></h3>
+<figure>
+<img
+src="https://cdn.image.st-hatena.com/image/scale/404319447ce9f60849725196d0bc3c6625cce254/backend=imagemagick;version=1;width=1300/https%3A%2F%2Fcdn-ak.f.st-hatena.com%2Fimages%2Ffotolife%2Fv%2Fvasilyjp%2F20260313%2F20260313100844.png"
+alt="OGP" />
+<figcaption aria-hidden="true">OGP</figcaption>
+</figure>
+<hr />
+</section>
+<section id="claude-codeログ基盤の構築" class="level3">
+<h3><a href="https://speakerdeck.com/giginet/claude-code-logging">Claude
+Codeログ基盤の構築</a></h3>
+<figure>
+<img
+src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+alt="OGP" />
+<figcaption aria-hidden="true">OGP</figcaption>
+</figure>
+<hr />
+</section>
+</section>
+<section id="開発ツールプラクティス" class="level2">
+<h2>開発ツール・プラクティス</h2>
+<section
+id="bokuchi---free-lightweight-markdown-editor-for-macos-windows-linux"
+class="level3">
+<h3><a href="https://bokuchi.com/">Bokuchi - Free Lightweight Markdown
+Editor for macOS, Windows &amp; Linux</a></h3>
+<figure>
+<img
+src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+alt="OGP" />
+<figcaption aria-hidden="true">OGP</figcaption>
+</figure>
+<hr />
+</section>
+<section id="findyの爆速開発を支えるセルフレビュー自動化の仕組み"
+class="level3">
+<h3><a
+href="https://tech.findy.co.jp/entry/2026/03/13/070000">Findyの爆速開発を支えるセルフレビュー自動化の仕組み</a></h3>
+<figure>
+<img
+src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+alt="OGP" />
+<figcaption aria-hidden="true">OGP</figcaption>
+</figure>
+<hr />
+</section>
+<section id="vite-8.0-is-out" class="level3">
+<h3><a href="https://vite.dev/blog/announcing-vite8">Vite 8.0 is
+out!</a></h3>
+<figure>
+<img src="https://vite.dev/og-image-announcing-vite8.webp" alt="OGP" />
+<figcaption aria-hidden="true">OGP</figcaption>
+</figure>
+<hr />
+</section>
+<section
+id="メモリ使用量40mbの衝撃理想のmarkdownエディタを求めた結果tauriで自作が一番良かった"
+class="level3">
+<h3><a
+href="https://qiita.com/ssaita/items/dd3ea7c8834c7bebebf9">メモリ使用量40MBの衝撃。理想のMarkdownエディタを求めた結果、Tauriで自作が一番良かった</a></h3>
+<figure>
+<img
+src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+alt="OGP" />
+<figcaption aria-hidden="true">OGP</figcaption>
+</figure>
+<hr />
+</section>
+<section
+id="github-actions-で参照するアクションはコミット-sha-で固定するべき"
+class="level3">
+<h3><a
+href="https://zenn.dev/kou_pg_0131/articles/gha-should-be-pinned">GitHub
+Actions で参照するアクションはコミット SHA で固定するべき</a></h3>
+<figure>
+<img
+src="https://res.cloudinary.com/zenn/image/upload/s--_CZXHOie--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:GitHub%2520Actions%2520%25E3%2581%25A7%25E5%258F%2582%25E7%2585%25A7%25E3%2581%2599%25E3%2582%258B%25E3%2582%25A2%25E3%2582%25AF%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%25B3%25E3%2581%25AF%25E3%2582%25B3%25E3%2583%259F%25E3%2583%2583%25E3%2583%2588%2520SHA%2520%25E3%2581%25A7%25E5%259B%25BA%25E5%25AE%259A%25E3%2581%2599%25E3%2582%258B%25E3%2581%25B9%25E3%2581%258D%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:koki%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzRhNjlmNDk5NTMuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png"
+alt="OGP" />
+<figcaption aria-hidden="true">OGP</figcaption>
+</figure>
+<hr />
+</section>
+<section
+id="コーディングガイドライン運用をaiで自動化しレビュー知見を資産化する"
+class="level3">
+<h3><a
+href="https://developers.cyberagent.co.jp/blog/archives/62639/">コーディングガイドライン運用をAIで自動化し、レビュー知見を資産化する</a></h3>
+<figure>
+<img
+src="https://developers.cyberagent.co.jp/blog/wp-content/themes/onepress-child/assets/images/og/og.png"
+alt="OGP" />
+<figcaption aria-hidden="true">OGP</figcaption>
+</figure>
+<hr />
+</section>
+</section>
+<section id="web歴史" class="level2">
+<h2>Web・歴史</h2>
+<section
+id="とほほのwww入門30年目も更新中-96年開設の個人サイトcgiからopenai-apiまでカバー"
+class="level3">
+<h3><a
+href="https://www.itmedia.co.jp/news/articles/2603/13/news073.html">「とほほのWWW入門」30年目も更新中　96年開設の個人サイト、CGIからOpenAI
+APIまでカバー</a></h3>
+<figure>
+<img
+src="https://image.itmedia.co.jp/news/articles/2603/13/cover_news073.png"
+alt="OGP" />
+<figcaption aria-hidden="true">OGP</figcaption>
+</figure>
+<hr />
+</section>
+</section>
+</section>
+</body>
+</html>

@@ -2,7 +2,7 @@
 
 ## 1. Parse — input_list.txt解析
 
-`input_list.txt` を読み込み、`---` でエントリを分割する。各エントリから list, conecter_type, get_data, block_data, lang を抽出する。
+`input_list.txt` を読み込み、`---` でエントリを分割する。各エントリから list, conecter_type, category, get_data, block_data, lang を抽出する。
 
 ## 2. Fetch — スキル起動による取得
 
@@ -14,6 +14,8 @@
 - `web-search`: WebSearchツールでURLを起点に検索し、記事情報をJSON形式に整形
 
 取得失敗時はスキップしてログを出力する。
+
+取得した各記事JSONに、元エントリの `category` フィールドを付与する（例: `"category": "IT"`）。
 
 ## 3. Filter — get_data/block_dataフィルタリング
 
@@ -54,9 +56,12 @@ echo '<JSON>' | python skills/ogp-fetch/scripts/fetch.py
 - `rlhf_warning`（歪み検出時）または `rlhf_caution`（感応トピック時）フィールドを付与
 - 翻訳文の修正は行わない。注釈の付与のみ
 
-## 8. Generate — 要約・Markdown生成
+## 8. Generate — Markdown生成
 
-新着記事を以下の形式でMarkdownにまとめる。タイトルにリンクを埋め込み、OGP画像があれば表示する:
+新着記事を `category` フィールドでグループ化し、以下の形式でMarkdownにまとめる。
+カテゴリの見出し（`## カテゴリ名`）は `input_list.txt` の `category` 値をそのまま使う。
+同一カテゴリに複数ソースの記事が混在してよい（ソース単位の分類は不要）。
+タイトルにリンクを埋め込み、OGP画像があれば表示する。**概要文は出力しない**（タイトルと重複しやすくトークン節約のため）:
 
 ```markdown
 # Daily Digest — YYYY-MM-DD
@@ -66,8 +71,6 @@ echo '<JSON>' | python skills/ogp-fetch/scripts/fetch.py
 ### [記事タイトル](URL)
 
 ![OGP](og_image_url)
-
-要約文（2-3文）
 
 ⚠️ RLHF Warning: （rlhf_warningがある場合のみ表示）
 ℹ️ RLHF Caution: （rlhf_cautionがある場合のみ表示）

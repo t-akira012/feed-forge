@@ -1,4 +1,4 @@
-# MAKE_LOG: translate / ideological-re-education 実装ログ
+# COOK: translate / ideological-re-education 実装ログ
 
 ## 日付
 2026-03-13

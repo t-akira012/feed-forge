@@ -1,11 +1,11 @@
 import os, re, sys
 
 
-def next_number(make_log_dir):
-    if not os.path.exists(make_log_dir):
+def next_number(cook_dir):
+    if not os.path.exists(cook_dir):
         return 1
     nums = []
-    for f in os.listdir(make_log_dir):
+    for f in os.listdir(cook_dir):
         m = re.match(r"^(\d{3})_", f)
         if m:
             nums.append(int(m.group(1)))
@@ -13,5 +13,5 @@ def next_number(make_log_dir):
 
 
 if __name__ == "__main__":
-    d = sys.argv[1] if len(sys.argv) > 1 else "make_log"
+    d = sys.argv[1] if len(sys.argv) > 1 else "cook"
     print(next_number(d))

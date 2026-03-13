@@ -1,6 +1,6 @@
 import os, re, sys
 
-TEMPLATE = """# MAKE_LOG: {name}
+TEMPLATE = """# COOK: {name}
 
 ## 日付
 
@@ -25,24 +25,24 @@ TEMPLATE = """# MAKE_LOG: {name}
 """
 
 
-def find_task_number(make_log_dir, name):
-    for f in sorted(os.listdir(make_log_dir), reverse=True):
+def find_task_number(cook_dir, name):
+    for f in sorted(os.listdir(cook_dir), reverse=True):
         m = re.match(r"^(\d{3})_" + re.escape(name) + r"_task\.md$", f)
         if m:
             return int(m.group(1))
-    raise FileNotFoundError(f"No task file found for '{name}' in {make_log_dir}")
+    raise FileNotFoundError(f"No task file found for '{name}' in {cook_dir}")
 
 
-def create_log(make_log_dir, name):
-    num = find_task_number(make_log_dir, name)
+def create_log(cook_dir, name):
+    num = find_task_number(cook_dir, name)
     filename = f"{num:03d}_{name}_log.md"
-    path = os.path.join(make_log_dir, filename)
+    path = os.path.join(cook_dir, filename)
     with open(path, "w") as f:
         f.write(TEMPLATE.format(name=name))
     return path
 
 
 if __name__ == "__main__":
-    d = sys.argv[1] if len(sys.argv) > 2 else "make_log"
+    d = sys.argv[1] if len(sys.argv) > 2 else "cook"
     name = sys.argv[-1]
     print(create_log(d, name))

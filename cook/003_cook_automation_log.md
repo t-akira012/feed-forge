@@ -1,10 +1,10 @@
-# MAKE_LOG: make-log スキル + hook 自動化
+# COOK: cook スキル + hook 自動化
 
 ## 日付
 2026-03-13
 
 ## 目的
-ADR-001の記録方式をskills+hookで自動化。実装変更があるのにmake_log/未更新の場合、Claudeにリマインドする。
+ADR-001の記録方式をskills+hookで自動化。実装変更があるのにcook/未更新の場合、Claudeにリマインドする。taskに対応するlogが未作成の場合も警告する。
 
 ---
 
@@ -14,7 +14,7 @@ ADR-001の記録方式をskills+hookで自動化。実装変更があるのにma
 
 #### next_number.py
 - 4テスト一発GREEN: 空ディレクトリ/既存ファイル/非番号ファイル無視/存在しないディレクトリ
-- `make_log/` 内の `{NNN}_` プレフィックスから最大番号を検出、+1を返す
+- `cook/` 内の `{NNN}_` プレフィックスから最大番号を検出、+1を返す
 
 #### init_task.py
 - 初回RED: `from next_number import next_number` がテスト時にモジュール解決不可
@@ -27,11 +27,12 @@ ADR-001の記録方式をskills+hookで自動化。実装変更があるのにma
 
 ### 2. hook
 
-#### check-make-log.sh
+#### check-cook.sh
 - UserPromptSubmitイベントで実行
-- git diff/ls-filesで変更検出 → skills/tests/.claude/等の変更ありかつmake_log/変更なしなら警告
+- git diff/ls-filesで変更検出 → skills/tests/.claude/等の変更ありかつcook/変更なしなら警告
+- cook/内のtaskファイルを走査し、対応するlogファイルが存在しない場合に警告
 - stdout出力がClaudeのコンテキストに注入される（exit 0）
-- 5テスト一発GREEN: 変更なし/変更あり警告/make_log同時変更で無警告/make_logのみ無警告/非gitリポ
+- 7テストGREEN: 変更なし/変更あり警告/cook同時変更で無警告/cookのみ無警告/非gitリポ/log欠落警告/ペア揃い無警告
 
 #### .claude/settings.json
 - UserPromptSubmitフックとして登録
@@ -42,14 +43,14 @@ ADR-001の記録方式をskills+hookで自動化。実装変更があるのにma
 
 | ファイル | 内容 |
 |---|---|
-| `skills/make-log/SKILL.md` | make-logスキル定義 |
-| `skills/make-log/scripts/next_number.py` | 次番号算出 |
-| `skills/make-log/scripts/init_task.py` | タスクファイル作成 |
-| `skills/make-log/scripts/write_log.py` | ログファイル作成 |
-| `.claude/hooks/check-make-log.sh` | 記録漏れ検出hookスクリプト |
+| `skills/cook/SKILL.md` | cookスキル定義 |
+| `skills/cook/scripts/next_number.py` | 次番号算出 |
+| `skills/cook/scripts/init_task.py` | タスクファイル作成 |
+| `skills/cook/scripts/write_log.py` | ログファイル作成 |
+| `.claude/hooks/check-cook.sh` | 記録漏れ検出 + logファイル欠落検出hookスクリプト |
 | `.claude/settings.json` | hook設定（UserPromptSubmit） |
-| `tests/test_make_log.py` | 11テスト |
-| `tests/test_check_make_log_hook.py` | 5テスト |
+| `tests/test_cook.py` | 11テスト |
+| `tests/test_check_cook_hook.py` | 7テスト |
 
 ## 判断メモ
 - init_task.pyでの相対import排除: テスト時のimportlib動的ロードと相性が悪いため、next_number関数をインライン化

@@ -7,9 +7,9 @@ import io
 
 import pytest
 
-NEXT_NUMBER = "skills/make-log/scripts/next_number.py"
-INIT_TASK = "skills/make-log/scripts/init_task.py"
-WRITE_LOG = "skills/make-log/scripts/write_log.py"
+NEXT_NUMBER = "skills/cook/scripts/next_number.py"
+INIT_TASK = "skills/cook/scripts/init_task.py"
+WRITE_LOG = "skills/cook/scripts/write_log.py"
 
 
 def load_module(path):
@@ -43,7 +43,7 @@ class TestNextNumber:
 
     def test_nonexistent_dir_returns_1(self):
         mod = load_module(NEXT_NUMBER)
-        assert mod.next_number("/tmp/nonexistent_make_log_dir_xyz") == 1
+        assert mod.next_number("/tmp/nonexistent_cook_dir_xyz") == 1
 
 
 class TestInitTask:
@@ -88,7 +88,7 @@ class TestWriteLog:
             path = mod.create_log(d, "feat")
             with open(path) as f:
                 content = f.read()
-            assert "# MAKE_LOG: feat" in content
+            assert "# COOK: feat" in content
             assert "実装の流れ" in content
 
     def test_matches_existing_task_number(self):

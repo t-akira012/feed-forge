@@ -16,6 +16,7 @@ def render(md_path, html_path):
     try:
         subprocess.run(
             ["pandoc", md_path, "-o", html_path, "--standalone",
+             "--section-divs",
              "--include-in-header", tmp_path,
              "--metadata", "title=Daily Digest"],
             check=True,
