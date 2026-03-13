@@ -42,19 +42,34 @@ h2 {
   margin: 36px 0 16px;
 }
 
-/* 3-column card grid: each .level2 section is a grid container */
+/* Subcategory grid: level3 is a subcategory container spanning full width */
 section.level2 {
+  display: block;
+}
+
+section.level3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
+  margin-bottom: 24px;
 }
 
-section.level2 > h2 {
+section.level3 > h3 {
   grid-column: 1 / -1;
 }
 
-/* Each article card */
-section.level3 {
+h3 {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 12px 0 4px;
+  color: var(--sub);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 4px;
+}
+
+/* Each article card (level4) */
+section.level4 {
   border: 1px solid var(--border);
   border-radius: 4px;
   padding: 8px;
@@ -62,24 +77,24 @@ section.level3 {
   overflow: hidden;
 }
 
-section.level3 hr {
+section.level4 hr {
   display: none;
 }
 
-h3 {
+h4 {
   font-size: 12px;
   font-weight: 600;
   line-height: 1.5;
   margin: 6px 0 0;
 }
 
-h3 a {
+h4 a {
   color: var(--text);
   text-decoration: none;
   transition: color 0.2s;
 }
 
-h3 a:hover {
+h4 a:hover {
   color: var(--accent);
 }
 
@@ -103,20 +118,36 @@ blockquote {
   margin: 12px 0;
 }
 
-/* OGP image in card */
-figure {
+/* OGP image in card — linked image (p > a > img) or figure */
+section.level4 > p:has(img) {
   margin: 0;
   width: 100%;
-  min-height: var(--ogp-h);
   background: #eee;
   border-radius: 4px;
   overflow: hidden;
+  aspect-ratio: 1200 / 630;
+}
+
+section.level4 > p img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+figure {
+  margin: 0;
+  width: 100%;
+  background: #eee;
+  border-radius: 4px;
+  overflow: hidden;
+  aspect-ratio: 1200 / 630;
 }
 
 figure img {
   display: block;
   width: 100%;
-  height: var(--ogp-h);
+  height: 100%;
   object-fit: cover;
 }
 
@@ -145,13 +176,13 @@ figcaption {
 header#title-block-header { display: none; }
 
 @media (max-width: 700px) {
-  section.level2 {
+  section.level3 {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 480px) {
-  section.level2 {
+  section.level3 {
     grid-template-columns: 1fr;
   }
 }

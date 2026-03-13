@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
@@ -215,19 +215,34 @@
     margin: 36px 0 16px;
   }
 
-  /* 3-column card grid: each .level2 section is a grid container */
+  /* Subcategory grid: level3 is a subcategory container spanning full width */
   section.level2 {
+    display: block;
+  }
+
+  section.level3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
+    margin-bottom: 24px;
   }
 
-  section.level2 > h2 {
+  section.level3 > h3 {
     grid-column: 1 / -1;
   }
 
-  /* Each article card */
-  section.level3 {
+  h3 {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin: 12px 0 4px;
+    color: var(--sub);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 4px;
+  }
+
+  /* Each article card (level4) */
+  section.level4 {
     border: 1px solid var(--border);
     border-radius: 4px;
     padding: 8px;
@@ -235,24 +250,24 @@
     overflow: hidden;
   }
 
-  section.level3 hr {
+  section.level4 hr {
     display: none;
   }
 
-  h3 {
+  h4 {
     font-size: 12px;
     font-weight: 600;
     line-height: 1.5;
     margin: 6px 0 0;
   }
 
-  h3 a {
+  h4 a {
     color: var(--text);
     text-decoration: none;
     transition: color 0.2s;
   }
 
-  h3 a:hover {
+  h4 a:hover {
     color: var(--accent);
   }
 
@@ -280,16 +295,16 @@
   figure {
     margin: 0;
     width: 100%;
-    min-height: var(--ogp-h);
     background: #eee;
     border-radius: 4px;
     overflow: hidden;
+    aspect-ratio: 1200 / 630;
   }
 
   figure img {
     display: block;
     width: 100%;
-    height: var(--ogp-h);
+    height: 100%;
     object-fit: cover;
   }
 
@@ -318,13 +333,13 @@
   header#title-block-header { display: none; }
 
   @media (max-width: 700px) {
-    section.level2 {
+    section.level3 {
       grid-template-columns: repeat(2, 1fr);
     }
   }
 
   @media (max-width: 480px) {
-    section.level2 {
+    section.level3 {
       grid-template-columns: 1fr;
     }
   }
@@ -342,40 +357,264 @@
 </header>
 <section id="daily-digest-2026-03-13" class="level1">
 <h1>Daily Digest — 2026-03-13</h1>
-<section id="aillm" class="level2">
-<h2>AI・LLM</h2>
-<section id="google-マップが大幅アップデートgeminiと融合"
-class="level3">
-<h3><a
-href="https://k-tai.watch.impress.co.jp/docs/news/2093079.html">「Google
-マップ」が大幅アップデート、Geminiと融合</a></h3>
+<section id="it" class="level2">
+<h2>IT</h2>
+<section id="ai" class="level3">
+<h3>AI</h3>
+<section id="llmの体感比較" class="level4">
+<h4><a
+href="https://anond.hatelabo.jp/20260313165615">LLMの体感比較</a></h4>
 <figure>
-<img
-src="https://k-tai.watch.impress.co.jp/img/ktw/list/2093/079/001.jpg"
+<img src="https://anond.hatelabo.jp/images/og-image-1500.gif"
 alt="OGP" />
 <figcaption aria-hidden="true">OGP</figcaption>
 </figure>
 <hr />
 </section>
 <section
-id="aiエージェントの内部構造長時間タスクを完遂させるエージェントハーネスの概要と設計実装"
-class="level3">
-<h3><a
-href="https://codezine.jp/article/detail/23340">【AIエージェントの内部構造】長時間タスクを完遂させる「エージェントハーネス」の概要と設計・実装</a></h3>
+id="aiチャットボットの8割が10代の若者による暴力計画を助長するがclaudeは常に拒否することが明らかに"
+class="level4">
+<h4><a
+href="https://gigazine.net/news/20260312-chatbots-helped-deadly-attacks/">AIチャットボットの8割が10代の若者による暴力計画を助長するがClaudeは常に拒否することが明らかに</a></h4>
 <figure>
 <img
-src="https://codezine.jp/static/images/article/23340/AI1200_ogp.png"
+src="https://i.gzn.jp/img/2026/03/12/chatbots-helped-deadly-attacks/00_m.jpg"
+alt="OGP" />
+<figcaption aria-hidden="true">OGP</figcaption>
+</figure>
+<hr />
+</section>
+<section id="mckinseyのaiプラットフォームをハッキングした方法"
+class="level4">
+<h4><a
+href="https://codewall.ai/blog/how-we-hacked-mckinseys-ai-platform">McKinseyのAIプラットフォームをハッキングした方法</a></h4>
+<figure>
+<img src="https://codewall.ai/images/mckinsey-og.png" alt="OGP" />
+<figcaption aria-hidden="true">OGP</figcaption>
+</figure>
+<hr />
+</section>
+<section
+id="実感copilot-pcの目玉機能リコールはただのスナップショット集ではない"
+class="level4">
+<h4><a
+href="https://forest.watch.impress.co.jp/docs/serial/usecopilotpc/2093255.html">【実感】Copilot+
+PCの目玉機能「リコール」はただのスナップショット集ではない！</a></h4>
+<figure>
+<img
+src="https://forest.watch.impress.co.jp/img/wf/list/2093/255/07.png"
+alt="OGP" />
+<figcaption aria-hidden="true">OGP</figcaption>
+</figure>
+<hr />
+</section>
+<section id="子ども向けai玩具が感情を誤読し不適切に応答している"
+class="level4">
+<h4><a
+href="https://www.bbc.co.uk/news/articles/clyg4wx6nxgo">子ども向けAI玩具が感情を誤読し、不適切に応答している</a></h4>
+<figure>
+<img
+src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+alt="OGP" />
+<figcaption aria-hidden="true">OGP</figcaption>
+</figure>
+<p>ℹ️ RLHF Caution:
+RLHF感応トピック（子ども＋AI安全性）を含む記事です。翻訳精度に注意してください。</p>
+<hr />
+</section>
+<section
+id="react-19vitegemini-2.5-flashでai搭載ポートフォリオを構築する"
+class="level4">
+<h4><a
+href="https://dev.to/devsomesh/building-an-ai-powered-portfolio-with-react-19-vite-and-gemini-25-flash-3ij2">React
+19、Vite、Gemini 2.5 FlashでAI搭載ポートフォリオを構築する</a></h4>
+<figure>
+<img
+src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ftfnburoqac1ezipge7xf.png"
 alt="OGP" />
 <figcaption aria-hidden="true">OGP</figcaption>
 </figure>
 <hr />
 </section>
 <section
-id="gpt-ossの推論を6倍速にthinking-off設定とollamaで効かない理由"
-class="level3">
-<h3><a
-href="https://qiita.com/ntaka329/items/35f156dbe526121e66f5">gpt-ossの推論を6倍速に。Thinking
-OFF設定と、Ollamaで効かない理由</a></h3>
+id="choragiの構築gemini-liveとgoogle-cloudで6エージェントのコンサート計画システムを編成した方法"
+class="level4">
+<h4><a
+href="https://dev.to/innovate/building-choragi-how-we-orchestrated-a-6-agent-concert-planning-system-with-gemini-live-and-google-4jg7">Choragiの構築：Gemini
+LiveとGoogle
+Cloudで6エージェントのコンサート計画システムを編成した方法</a></h4>
+<figure>
+<img
+src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F99sibbs1sdtnia5wvt0i.png"
+alt="OGP" />
+<figcaption aria-hidden="true">OGP</figcaption>
+</figure>
+<hr />
+</section>
+<section id="あなたのaiエージェントは従業員の50倍のidを持っている"
+class="level4">
+<h4><a
+href="https://dev.to/ai_agent_digest/your-ai-agents-have-50x-more-identities-than-your-employees-4gh">あなたのAIエージェントは従業員の50倍のIDを持っている</a></h4>
+<figure>
+<img
+src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Ffiles.catbox.moe%2Fz4avgp.png"
+alt="OGP" />
+<figcaption aria-hidden="true">OGP</figcaption>
+</figure>
+<hr />
+</section>
+<section id="qwenを海賊のように話すよう訓練した-2回目で成功"
+class="level4">
+<h4><a
+href="https://dev.to/mikegcaws/i-trained-qwen-to-talk-like-a-pirate-got-it-right-second-time-4ac2">Qwenを海賊のように話すよう訓練した
+— 2回目で成功</a></h4>
+<figure>
+<img
+src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fvndnqh6gs25jao44zh85.jpg"
+alt="OGP" />
+<figcaption aria-hidden="true">OGP</figcaption>
+</figure>
+<hr />
+</section>
+<section id="vibe-codingでアプリを作ってみたけど結局やめた話"
+class="level4">
+<h4><a
+href="https://zenn.dev/mato/articles/65cf1b36537cca">Vibe-Codingでアプリを作ってみたけど、結局やめた話</a></h4>
+<figure>
+<img
+src="https://res.cloudinary.com/zenn/image/upload/s--QY-LQ1VS--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:Vibe-Coding%25E3%2581%25A7%25E3%2582%25A2%25E3%2583%2597%25E3%2583%25AA%25E3%2582%2592%25E4%25BD%259C%25E3%2581%25A3%25E3%2581%25A6%25E3%2581%25BF%25E3%2581%259F%25E3%2581%2591%25E3%2581%25A9%25E3%2580%2581%25E7%25B5%2590%25E5%25B1%2580%25E3%2582%2584%25E3%2582%2581%25E3%2581%259F%25E8%25A9%25B1%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:mato%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EtL0FPaDE0R2h4YXlIQ1NRVXVMTnRZZHBVSDVhZUp4MlpTOXZhdHlFNmlsbTl0VDFBPXM5Ni1j%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png?_a=BACAGSGT"
+alt="OGP" />
+<figcaption aria-hidden="true">OGP</figcaption>
+</figure>
+<hr />
+</section>
+<section id="日曜バイブコーダーがゲーム制作に行き詰まったその後の話"
+class="level4">
+<h4><a
+href="https://zenn.dev/kemogamer_nu/articles/3f047c54657094">日曜バイブコーダーがゲーム制作に行き詰まったその後の話</a></h4>
+<figure>
+<img
+src="https://res.cloudinary.com/zenn/image/upload/s--kJ4MEAhi--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:%25E6%2597%25A5%25E6%259B%259C%25E3%2583%2590%25E3%2582%25A4%25E3%2583%2596%25E3%2582%25B3%25E3%2583%25BC%25E3%2583%2580%25E3%2583%25BC%25E3%2581%258C%25E3%2582%25B2%25E3%2583%25BC%25E3%2583%25A0%25E5%2588%25B6%25E4%25BD%259C%25E3%2581%25AB%25E8%25A1%258C%25E3%2581%258D%25E8%25A9%25B0%25E3%2581%25BE%25E3%2581%25A3%25E3%2581%259F%25E3%2581%259D%25E3%2581%25AE%25E5%25BE%258C%25E3%2581%25AE%25E8%25A9%25B1%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:kemogamerNu%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzlhZDQ3M2VkMGIuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png?_a=BACAGSGT"
+alt="OGP" />
+<figcaption aria-hidden="true">OGP</figcaption>
+</figure>
+<hr />
+</section>
+</section>
+<section id="claude-code" class="level3">
+<h3>Claude Code</h3>
+<section
+id="claude-codeのエージェントチームを使うだけで大抵のことが出来るようになった"
+class="level4">
+<h4><a href="https://zenn.dev/n314/articles/e06f189f093902">Claude
+Codeのエージェントチームを使うだけで大抵のことが出来るようになった</a></h4>
+<figure>
+<img
+src="https://res.cloudinary.com/zenn/image/upload/s--cfHzoSDf--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:Claude%2520Code%25E3%2581%25AE%25E3%2582%25A8%25E3%2583%25BC%25E3%2582%25B8%25E3%2582%25A7%25E3%2583%25B3%25E3%2583%2588%25E3%2583%2581%25E3%2583%25BC%25E3%2583%25A0%25E3%2582%2592%25E4%25BD%25BF%25E3%2581%2586%25E3%2581%25A0%25E3%2581%2591%25E3%2581%25A7%25E5%25A4%25A7%25E6%258A%25B5%25E3%2581%25AE%25E3%2581%2593%25E3%2581%25A8%25E3%2581%258C%25E5%2587%25BA%25E6%259D%25A5%25E3%2582%258B%25E3%2582%2588%25E3%2581%2586%25E3%2581%25AB%25E3%2581%25AA%25E3%2581%25A3%25E3%2581%259F%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:nishimura%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyL2ExYmFiYzVhY2EuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png?_a=BACAGSGT"
+alt="OGP" />
+<figcaption aria-hidden="true">OGP</figcaption>
+</figure>
+<hr />
+</section>
+</section>
+<section id="クラウドインフラ" class="level3">
+<h3>クラウド・インフラ</h3>
+<section id="awsを退職しました---yamaguchiweblog" class="level4">
+<h4><a
+href="https://ymotongpoo.hatenablog.com/entry/leaving-aws">AWSを退職しました
+- YAMAGUCHI::weblog</a></h4>
+<figure>
+<img
+src="https://cdn.image.st-hatena.com/image/scale/9920a83471cdee5b414ef47a04c5a734d53b29f3/backend=imagemagick;version=1;width=1300/https%3A%2F%2Fcdn-ak.f.st-hatena.com%2Fimages%2Ffotolife%2Fy%2Fymotongpoo%2F20260313%2F20260313145959.jpg"
+alt="OGP" />
+<figcaption aria-hidden="true">OGP</figcaption>
+</figure>
+<hr />
+</section>
+<section
+id="service-catalog-で-cdk-で作成したアプリケーションをマルチアカウント配布する"
+class="level4">
+<h4><a href="https://iret.media/189791">Service Catalog で CDK
+で作成したアプリケーションをマルチアカウント配布する</a></h4>
+<figure>
+<img
+src="https://iret.media/wp-content/uploads/2026/03/eyecatch-aws-service-catalog-1200x630.png"
+alt="OGP" />
+<figcaption aria-hidden="true">OGP</figcaption>
+</figure>
+<hr />
+</section>
+<section
+id="golangとgrpcでspotifysoundclouddeezeryoutube-musicのストリーミングアグリゲーターを構築した"
+class="level4">
+<h4><a
+href="https://dev.to/feralbureau/i-built-streaming-aggregator-from-spotify-sc-deezer-and-yt-music-with-golang-and-grpc-41c8">GolangとgRPCでSpotify、SoundCloud、Deezer、YouTube
+Musicのストリーミングアグリゲーターを構築した</a></h4>
+<figure>
+<img
+src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8jfkv9qvpwdlzxyp1s3k.png"
+alt="OGP" />
+<figcaption aria-hidden="true">OGP</figcaption>
+</figure>
+<hr />
+</section>
+</section>
+<section id="開発ツールプラクティス" class="level3">
+<h3>開発ツール・プラクティス</h3>
+<section id="gojang-framework---modern-go-web-framework" class="level4">
+<h4><a href="https://gojang.io/">Gojang Framework - Modern Go Web
+Framework</a></h4>
+<figure>
+<img
+src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+alt="OGP" />
+<figcaption aria-hidden="true">OGP</figcaption>
+</figure>
+<hr />
+</section>
+<section id="announcing-vite-alpha" class="level4">
+<h4><a
+href="https://voidzero.dev/posts/announcing-vite-plus-alpha">Announcing
+Vite+ Alpha</a></h4>
+<figure>
+<img src="https://voidzero.dev/covers/announcing-vite-plus-alpha.jpg"
+alt="OGP" />
+<figcaption aria-hidden="true">OGP</figcaption>
+</figure>
+<hr />
+</section>
+<section
+id="見出しへのアンカーリンクが簡単にシェアできるようになりました---はてなブログ開発ブログ"
+class="level4">
+<h4><a
+href="https://staff.hatenablog.com/entry/2026/03/13/155425">見出しへのアンカーリンクが簡単にシェアできるようになりました
+- はてなブログ開発ブログ</a></h4>
+<figure>
+<img
+src="https://ogimage.blog.st-hatena.com/13208647353034080390/17179246901364449212/1773384866"
+alt="OGP" />
+<figcaption aria-hidden="true">OGP</figcaption>
+</figure>
+<hr />
+</section>
+<section
+id="なぜ-unity-は-c-を選びunreal-は選ばなかったのかについての個人の考察"
+class="level4">
+<h4><a href="https://zenn.dev/wuyukwi/articles/97b70df23bd792">なぜ
+Unity は C# を選び、Unreal
+は選ばなかったのかについての個人の考察</a></h4>
+<figure>
+<img
+src="https://res.cloudinary.com/zenn/image/upload/s--zBrTO3ww--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:%25E3%2581%25AA%25E3%2581%259C%2520Unity%2520%25E3%2581%25AF%2520C%2523%2520%25E3%2582%2592%25E9%2581%25B8%25E3%2581%25B3%25E3%2580%2581Unreal%2520%25E3%2581%25AF%25E9%2581%25B8%25E3%2581%25B0%25E3%2581%25AA%25E3%2581%258B%25E3%2581%25A3%25E3%2581%259F%25E3%2581%25AE%25E3%2581%258B%25E3%2581%25AB%25E3%2581%25A4%25E3%2581%2584%25E3%2581%25A6%25E3%2581%25AE%25E5%2580%258B%25E4%25BA%25BA%25E3%2581%25AE%25E8%2580%2583%25E5%25AF%259F%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:%25E8%25A1%258C%25E6%2596%25B9%25E4%25B8%258D%25E7%259F%25A5%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jTHlSa2k3RHZ2c2JjczRDQU9QN2o2RTdOQzhIS0ZVeWVlTW5IV01CaHNjaFRJRVF6az1zOTYtYw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png?_a=BACAGSGT"
+alt="OGP" />
+<figcaption aria-hidden="true">OGP</figcaption>
+</figure>
+<hr />
+</section>
+<section id="okmain-画像の適切なメインカラーを選択する方法"
+class="level4">
+<h4><a href="https://dgroshev.com/blog/okmain/">Okmain:
+画像の適切なメインカラーを選択する方法</a></h4>
 <figure>
 <img
 src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -385,78 +624,88 @@ alt="OGP" />
 <hr />
 </section>
 <section
-id="生成aiツールcomfyuiの複雑怪奇なuiをスッキリ分かりやすくできる公式機能app-modeが登場"
-class="level3">
-<h3><a
-href="https://gigazine.net/news/20260312-comfyui-app-mode/">生成AIツール「ComfyUI」の複雑怪奇なUIをスッキリ分かりやすくできる公式機能「App
-Mode」が登場</a></h3>
+id="不適切語フィルタのスケーリングリアルタイムチャットにtrieを使う理由"
+class="level4">
+<h4><a
+href="https://dev.to/doogal/scaling-profanity-filters-why-i-use-tries-for-real-time-chat-b17">不適切語フィルタのスケーリング：リアルタイムチャットにTrieを使う理由</a></h4>
 <figure>
 <img
-src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fgrf9jwhfaelp2na3j50w.jpeg"
 alt="OGP" />
 <figcaption aria-hidden="true">OGP</figcaption>
 </figure>
 <hr />
 </section>
-<section id="ネット詐欺のターゲットは人間ではなくaiエージェントに"
-class="level3">
-<h3><a
-href="https://internet.watch.impress.co.jp/docs/column/netliteracy/2091933.html">ネット詐欺のターゲットは人間ではなく、AIエージェントに？</a></h3>
+<section id="なぜ連結リストはツリーになりたがるのか" class="level4">
+<h4><a
+href="https://dev.to/doogal/why-your-linked-list-wants-to-be-a-bloody-tree-fea">なぜ連結リストはツリーになりたがるのか</a></h4>
 <figure>
 <img
-src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-alt="OGP" />
-<figcaption aria-hidden="true">OGP</figcaption>
-</figure>
-<hr />
-</section>
-<section id="外出先の非力なノートpcで自宅の大型llmを動かすlm-link登場"
-class="level3">
-<h3><a
-href="https://pc.watch.impress.co.jp/docs/column/nishikawa/2092683.html">外出先の非力なノートPCで自宅の大型LLMを動かす「LM
-Link」登場</a></h3>
-<figure>
-<img
-src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-alt="OGP" />
-<figcaption aria-hidden="true">OGP</figcaption>
-</figure>
-<hr />
-</section>
-<section id="イランgoogleやnvidiaなど米7社標的名指し-ai企業に攻撃リスク"
-class="level3">
-<h3><a
-href="https://www.nikkei.com/article/DGXZQOUC12CHH0S6A310C2000000/">イラン、GoogleやNVIDIAなど米7社標的名指し　AI企業に攻撃リスク</a></h3>
-<figure>
-<img
-src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-alt="OGP" />
-<figcaption aria-hidden="true">OGP</figcaption>
-</figure>
-<hr />
-</section>
-</section>
-<section id="claude-code" class="level2">
-<h2>Claude Code</h2>
-<section
-id="anthropic公式のclaude-code-pluginが増えてたので改めて眺める2026年3月"
-class="level3">
-<h3><a
-href="https://dev.classmethod.jp/articles/claude-plugins-official-view-2026-03/">Anthropic公式のClaude
-Code Pluginが増えてたので、改めて眺める（2026年3月）</a></h3>
-<figure>
-<img
-src="https://images.ctfassets.net/ct0aopd36mqt/3KBTm8tdpO9RJJuaVvVzod/a9964bb03097b448b2327edc6920bf9f/Claude.png"
+src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fhx7od8sehod95aa24ql6.jpeg"
 alt="OGP" />
 <figcaption aria-hidden="true">OGP</figcaption>
 </figure>
 <hr />
 </section>
 <section
-id="claude-codeのセッション履歴が30日で消えると知って9999日に変えた話"
-class="level3">
-<h3><a href="https://note.com/cute_agapan9087/n/nf54c17fc5f43">Claude
-Codeのセッション履歴が30日で消えると知って9999日に変えた話</a></h3>
+id="railsアップグレードでスケジュールを狂わせコードベースを壊す-よくある間違い"
+class="level4">
+<h4><a
+href="https://dev.to/devansh2002/common-mistakes-in-rails-upgrade-that-derail-timelines-and-break-codebases-2af9">Railsアップグレードでスケジュールを狂わせコードベースを壊す
+よくある間違い</a></h4>
+<figure>
+<img
+src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fk5604wc2dqtogj8lrphm.png"
+alt="OGP" />
+<figcaption aria-hidden="true">OGP</figcaption>
+</figure>
+<hr />
+</section>
+<section id="あなたのinsert-into-audit_logが何も証明しない理由"
+class="level4">
+<h4><a
+href="https://dev.to/zerolooplabs/why-your-insert-into-auditlog-proves-nothing-1ohf">あなたのINSERT
+INTO audit_logが何も証明しない理由</a></h4>
+<figure>
+<img
+src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fhz1hu9fe7sb7yqv9nfbg.png"
+alt="OGP" />
+<figcaption aria-hidden="true">OGP</figcaption>
+</figure>
+<hr />
+</section>
+<section
+id="なぜ私はゲーム開発で疎結合とコンポーネント指向に異常なほどこだわるのか"
+class="level4">
+<h4><a
+href="https://zenn.dev/munimaru62o/articles/c6ed730c6e4c61">なぜ私はゲーム開発で「疎結合」と「コンポーネント指向」に異常なほどこだわるのか</a></h4>
+<figure>
+<img
+src="https://res.cloudinary.com/zenn/image/upload/s---W_Q6ruD--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:%25E3%2581%25AA%25E3%2581%259C%25E7%25A7%2581%25E3%2581%25AF%25E3%2582%25B2%25E3%2583%25BC%25E3%2583%25A0%25E9%2596%258B%25E7%2599%25BA%25E3%2581%25A7%25E3%2580%258C%25E7%2596%258E%25E7%25B5%2590%25E5%2590%2588%25E3%2580%258D%25E3%2581%25A8%25E3%2580%258C%25E3%2582%25B3%25E3%2583%25B3%25E3%2583%259D%25E3%2583%25BC%25E3%2583%258D%25E3%2583%25B3%25E3%2583%2588%25E6%258C%2587%25E5%2590%2591%25E3%2580%258D%25E3%2581%25AB%25E7%2595%25B0%25E5%25B8%25B8%25E3%2581%25AA%25E3%2581%25BB%25E3%2581%25A9%25E3%2581%2593%25E3%2581%25A0%25E3%2582%258F%25E3%2582%258B%25E3%2581%25AE%25E3%2581%258B%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:%25E3%2582%2580%25E3%2581%25AB%25E3%2581%25BE%25E3%2582%258B%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyL2Y4ZTQwOGE3YTkuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png?_a=BACAGSGT"
+alt="OGP" />
+<figcaption aria-hidden="true">OGP</figcaption>
+</figure>
+<hr />
+</section>
+<section id="コードレビューをなくすことを考える" class="level4">
+<h4><a
+href="https://zenn.dev/henteko/articles/871526c9fffcec">コードレビューをなくすことを考える</a></h4>
+<figure>
+<img
+src="https://res.cloudinary.com/zenn/image/upload/s--PeQPx_qY--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:%25E3%2582%25B3%25E3%2583%25BC%25E3%2583%2589%25E3%2583%25AC%25E3%2583%2593%25E3%2583%25A5%25E3%2583%25BC%25E3%2582%2592%25E3%2581%25AA%25E3%2581%258F%25E3%2581%2599%25E3%2581%2593%25E3%2581%25A8%25E3%2582%2592%25E8%2580%2583%25E3%2581%2588%25E3%2582%258B%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:henteko%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzcxNTJkOWE4YjUuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png?_a=BACAGSGT"
+alt="OGP" />
+<figcaption aria-hidden="true">OGP</figcaption>
+</figure>
+<hr />
+</section>
+</section>
+<section id="セキュリティ" class="level3">
+<h3>セキュリティ</h3>
+<section id="フィッシング対策協議会-202602-フィッシング報告状況"
+class="level4">
+<h4><a
+href="https://www.antiphishing.jp/report/monthly/202602.html">フィッシング対策協議会
+2026/02 フィッシング報告状況</a></h4>
 <figure>
 <img
 src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -465,150 +714,83 @@ alt="OGP" />
 </figure>
 <hr />
 </section>
-<section id="claude-code-2026年-最新アップデート" class="level3">
-<h3><a href="https://speakerdeck.com/oikon48/claude-code-0312">Claude
-Code 2026年 最新アップデート</a></h3>
+</section>
+<section id="その他" class="level3">
+<h3>その他</h3>
+<section
+id="新型xboxの一端が明らかに次世代directx向けのカスタムsocを搭載"
+class="level4">
+<h4><a
+href="https://www.4gamer.net/games/988/G098836/20260312014/">新型Xboxの一端が明らかに。次世代DirectX向けのカスタムSoCを搭載</a></h4>
 <figure>
 <img
-src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+src="https://www.4gamer.net/games/988/G098836/20260312014/SS/003.jpg"
 alt="OGP" />
 <figcaption aria-hidden="true">OGP</figcaption>
 </figure>
 <hr />
 </section>
 <section
-id="claude-code-のコード品質がばらつくので-ai-に品質保証させる仕組みを作った話"
-class="level3">
-<h3><a
-href="https://speakerdeck.com/nrslib/a-story-about-building-a-mechanism-to-have-ai-ensure-quality-because-the-code-quality-from-claude-code-was-inconsistent">Claude
-Code のコード品質がばらつくので AI
-に品質保証させる仕組みを作った話</a></h3>
+id="macbook-neoはわずか10分以内で分解可能接着剤なしでネジ留めのみのモジュール設計"
+class="level4">
+<h4><a
+href="https://gigazine.net/news/20260313-macbook-neo-makes-repairs-easier/">MacBook
+Neoはわずか10分以内で分解可能、接着剤なしでネジ留めのみのモジュール設計</a></h4>
 <figure>
 <img
-src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+src="https://i.gzn.jp/img/2026/03/13/macbook-neo-makes-repairs-easier/00.jpg"
+alt="OGP" />
+<figcaption aria-hidden="true">OGP</figcaption>
+</figure>
+<hr />
+</section>
+<section id="google-pixelを仕事特化スマホに改良したらこうなった"
+class="level4">
+<h4><a
+href="https://www.gizmodo.jp/2026/03/google-pixel-use-as-job-phone-zq5.html">Google
+Pixelを、仕事特化スマホに改良したら、こうなった</a></h4>
+<figure>
+<img
+src="https://media.loom-app.com/gizmodo/dist/images/2025/03/31/IMG_3579.JPG?w=1280&amp;h=630&amp;f=jpg"
+alt="OGP" />
+<figcaption aria-hidden="true">OGP</figcaption>
+</figure>
+<hr />
+</section>
+<section id="トピックパソコンのメモリ何gb積んでますか" class="level4">
+<h4><a
+href="https://pc.watch.impress.co.jp/docs/topic/enquete/2089741.html">【トピック】パソコンのメモリ、何GB積んでますか？</a></h4>
+<figure>
+<img
+src="https://pc.watch.impress.co.jp/img/pcw/list/2089/741/warashi_result.jpg"
 alt="OGP" />
 <figcaption aria-hidden="true">OGP</figcaption>
 </figure>
 <hr />
 </section>
 <section
-id="社員に何もさせずにclaude-code利用ログを集める-数百名規模のopentelemetry収集基盤の構築"
-class="level3">
-<h3><a
-href="https://techblog.zozo.com/entry/claudecode-otel">社員に何もさせずにClaude
-Code利用ログを集める ── 数百名規模のOpenTelemetry収集基盤の構築</a></h3>
+id="トランスフォーマー内部でプログラムを実行し指数関数的に高速な推論を実現する"
+class="level4">
+<h4><a
+href="https://www.percepta.ai/blog/can-llms-be-computers">トランスフォーマー内部でプログラムを実行し、指数関数的に高速な推論を実現する</a></h4>
+<figure>
+<img src="https://percepta.ai/blog/turing-hero-og.png" alt="OGP" />
+<figcaption aria-hidden="true">OGP</figcaption>
+</figure>
+<hr />
+</section>
+<section id="プログラマの抱いている不動産データについての誤謬"
+class="level4">
+<h4><a
+href="https://zenn.dev/estie/articles/39efe1ebf6b188">プログラマの抱いている不動産データについての誤謬</a></h4>
 <figure>
 <img
-src="https://cdn.image.st-hatena.com/image/scale/404319447ce9f60849725196d0bc3c6625cce254/backend=imagemagick;version=1;width=1300/https%3A%2F%2Fcdn-ak.f.st-hatena.com%2Fimages%2Ffotolife%2Fv%2Fvasilyjp%2F20260313%2F20260313100844.png"
+src="https://res.cloudinary.com/zenn/image/upload/s--S8hy-3dE--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:%25E3%2583%2597%25E3%2583%25AD%25E3%2582%25B0%25E3%2583%25A9%25E3%2583%259E%25E3%2581%25AE%25E6%258A%25B1%25E3%2581%2584%25E3%2581%25A6%25E3%2581%2584%25E3%2582%258B%25E4%25B8%258D%25E5%258B%2595%25E7%2594%25A3%25E3%2583%2587%25E3%2583%25BC%25E3%2582%25BF%25E3%2581%25AB%25E3%2581%25A4%25E3%2581%2584%25E3%2581%25A6%25E3%2581%25AE%25E8%25AA%25A4%25E8%25AC%25AC%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_34:yasuand%2Cx_220%2Cy_108/bo_3px_solid_rgb:d6e3ed%2Cg_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzUwYzZlODUxOGQuanBlZw==%2Cr_20%2Cw_90%2Cx_92%2Cy_102/g_south_west%2Ch_34%2Cl_default:og-publication-pro-mark-xcosax%2Cw_34%2Cx_217%2Cy_158/co_rgb:6e7b85%2Cg_south_west%2Cl_text:notosansjp-medium.otf_30:estie%2520%25E3%2583%2586%25E3%2583%2583%25E3%2582%25AF%25E3%2583%2596%25E3%2583%25AD%25E3%2582%25B0%2Cx_255%2Cy_160/bo_4px_solid_white%2Cg_south_west%2Ch_50%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzRjMjFiMDg1NTIuanBlZw==%2Cr_max%2Cw_50%2Cx_139%2Cy_84/v1627283836/default/og-base-w1200-v2.png?_a=BACAGSGT"
 alt="OGP" />
 <figcaption aria-hidden="true">OGP</figcaption>
 </figure>
 <hr />
 </section>
-<section id="claude-codeログ基盤の構築" class="level3">
-<h3><a href="https://speakerdeck.com/giginet/claude-code-logging">Claude
-Codeログ基盤の構築</a></h3>
-<figure>
-<img
-src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-alt="OGP" />
-<figcaption aria-hidden="true">OGP</figcaption>
-</figure>
-<hr />
-</section>
-</section>
-<section id="開発ツールプラクティス" class="level2">
-<h2>開発ツール・プラクティス</h2>
-<section
-id="bokuchi---free-lightweight-markdown-editor-for-macos-windows-linux"
-class="level3">
-<h3><a href="https://bokuchi.com/">Bokuchi - Free Lightweight Markdown
-Editor for macOS, Windows &amp; Linux</a></h3>
-<figure>
-<img
-src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-alt="OGP" />
-<figcaption aria-hidden="true">OGP</figcaption>
-</figure>
-<hr />
-</section>
-<section id="findyの爆速開発を支えるセルフレビュー自動化の仕組み"
-class="level3">
-<h3><a
-href="https://tech.findy.co.jp/entry/2026/03/13/070000">Findyの爆速開発を支えるセルフレビュー自動化の仕組み</a></h3>
-<figure>
-<img
-src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-alt="OGP" />
-<figcaption aria-hidden="true">OGP</figcaption>
-</figure>
-<hr />
-</section>
-<section id="vite-8.0-is-out" class="level3">
-<h3><a href="https://vite.dev/blog/announcing-vite8">Vite 8.0 is
-out!</a></h3>
-<figure>
-<img src="https://vite.dev/og-image-announcing-vite8.webp" alt="OGP" />
-<figcaption aria-hidden="true">OGP</figcaption>
-</figure>
-<hr />
-</section>
-<section
-id="メモリ使用量40mbの衝撃理想のmarkdownエディタを求めた結果tauriで自作が一番良かった"
-class="level3">
-<h3><a
-href="https://qiita.com/ssaita/items/dd3ea7c8834c7bebebf9">メモリ使用量40MBの衝撃。理想のMarkdownエディタを求めた結果、Tauriで自作が一番良かった</a></h3>
-<figure>
-<img
-src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-alt="OGP" />
-<figcaption aria-hidden="true">OGP</figcaption>
-</figure>
-<hr />
-</section>
-<section
-id="github-actions-で参照するアクションはコミット-sha-で固定するべき"
-class="level3">
-<h3><a
-href="https://zenn.dev/kou_pg_0131/articles/gha-should-be-pinned">GitHub
-Actions で参照するアクションはコミット SHA で固定するべき</a></h3>
-<figure>
-<img
-src="https://res.cloudinary.com/zenn/image/upload/s--_CZXHOie--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:GitHub%2520Actions%2520%25E3%2581%25A7%25E5%258F%2582%25E7%2585%25A7%25E3%2581%2599%25E3%2582%258B%25E3%2582%25A2%25E3%2582%25AF%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%25B3%25E3%2581%25AF%25E3%2582%25B3%25E3%2583%259F%25E3%2583%2583%25E3%2583%2588%2520SHA%2520%25E3%2581%25A7%25E5%259B%25BA%25E5%25AE%259A%25E3%2581%2599%25E3%2582%258B%25E3%2581%25B9%25E3%2581%258D%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:koki%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzRhNjlmNDk5NTMuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png"
-alt="OGP" />
-<figcaption aria-hidden="true">OGP</figcaption>
-</figure>
-<hr />
-</section>
-<section
-id="コーディングガイドライン運用をaiで自動化しレビュー知見を資産化する"
-class="level3">
-<h3><a
-href="https://developers.cyberagent.co.jp/blog/archives/62639/">コーディングガイドライン運用をAIで自動化し、レビュー知見を資産化する</a></h3>
-<figure>
-<img
-src="https://developers.cyberagent.co.jp/blog/wp-content/themes/onepress-child/assets/images/og/og.png"
-alt="OGP" />
-<figcaption aria-hidden="true">OGP</figcaption>
-</figure>
-<hr />
-</section>
-</section>
-<section id="web歴史" class="level2">
-<h2>Web・歴史</h2>
-<section
-id="とほほのwww入門30年目も更新中-96年開設の個人サイトcgiからopenai-apiまでカバー"
-class="level3">
-<h3><a
-href="https://www.itmedia.co.jp/news/articles/2603/13/news073.html">「とほほのWWW入門」30年目も更新中　96年開設の個人サイト、CGIからOpenAI
-APIまでカバー</a></h3>
-<figure>
-<img
-src="https://image.itmedia.co.jp/news/articles/2603/13/cover_news073.png"
-alt="OGP" />
-<figcaption aria-hidden="true">OGP</figcaption>
-</figure>
-<hr />
 </section>
 </section>
 </section>
