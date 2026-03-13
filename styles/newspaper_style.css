@@ -1,0 +1,133 @@
+@charset "UTF-8";
+
+:root {
+  --text: #1a1a1a;
+  --bg: #faf8f5;
+  --border: #c8c0b4;
+  --accent: #8b0000;
+  --sub: #555;
+  --ogp-w: 140px;
+  --ogp-h: 90px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", "Times New Roman", serif;
+  color: var(--text);
+  background: var(--bg);
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+  line-height: 1.9;
+  font-size: 15px;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.15em;
+  border-top: 3px double var(--border);
+  border-bottom: 3px double var(--border);
+  padding: 16px 0;
+  margin-bottom: 32px;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--accent);
+  border-left: 4px solid var(--accent);
+  padding-left: 10px;
+  margin: 36px 0 16px;
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 20px 0 6px;
+}
+
+h3 a {
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  transition: border-color 0.2s;
+}
+
+h3 a:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+p {
+  margin: 4px 0 16px;
+  text-align: justify;
+  color: var(--sub);
+  font-size: 14px;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 20px 0;
+  clear: both;
+}
+
+blockquote {
+  border-left: 3px solid var(--border);
+  padding-left: 12px;
+  color: var(--sub);
+  font-style: italic;
+  margin: 12px 0;
+}
+
+/* OGP image card layout: image floats right, text flows beside it */
+figure {
+  float: right;
+  margin: 0 0 8px 16px;
+  width: var(--ogp-w);
+  min-height: var(--ogp-h);
+  background: #eee;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+figure img {
+  display: block;
+  width: var(--ogp-w);
+  height: var(--ogp-h);
+  object-fit: cover;
+}
+
+figcaption {
+  display: none;
+}
+
+/* RLHF annotations */
+p:has(strong) {
+  font-size: 13px;
+}
+
+.rlhf-warning {
+  background: #fff3cd;
+  border-left: 4px solid #d4a017;
+  padding: 8px 12px;
+  margin: 8px 0;
+  font-size: 13px;
+}
+
+.rlhf-caution {
+  background: #e8f4fd;
+  border-left: 4px solid #5b9bd5;
+  padding: 8px 12px;
+  margin: 8px 0;
+  font-size: 13px;
+}
+
+@media print {
+  body { max-width: 100%; padding: 20px; }
+  h3 a { border-bottom: none; }
+}
