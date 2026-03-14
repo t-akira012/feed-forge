@@ -19,9 +19,9 @@ def build_prompt(user_prompt):
     return f"{system_instruction}\n\n{user_prompt}"
 
 
-def dispatch(task_name, prompt, parcel_base="./parcel", timeout=600):
+def dispatch(task_name, prompt, parcel_base="./parcel", timeout=600, ext="md"):
     parcel_dir = make_parcel_dir(parcel_base, task_name)
-    parcel_file = os.path.join(parcel_dir, f"{task_name}.md")
+    parcel_file = os.path.join(parcel_dir, f"{task_name}.{ext}")
     full_prompt = build_prompt(prompt)
 
     cmd = [
