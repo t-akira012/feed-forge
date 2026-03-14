@@ -1,21 +1,25 @@
 以下のパイプラインを順番に実行せよ。
 
-## 1. Parse — input_list.txt解析
+## 1-2. Fetch — データ取得（outsourcing対応）
 
-`input_list.txt` を読み込み、`---` でエントリを分割する。各エントリから list, conecter_type, category, get_data, block_data, lang を抽出する。
+データ取得は2つの方法で実行できる:
 
-## 2. Fetch — スキル起動による取得
+### 方法A: outsourcingスキル経由（推奨・トークン節約）
 
-各エントリについて conecter_type に対応するスキルを起動する:
-- `rss-fetch`: `python skills/rss-fetch/scripts/fetch.py <URL>` を実行しJSON取得
-- `api-fetch`: `python skills/api-fetch/scripts/fetch.py <URL>` を実行しJSON取得
-- `scrape-fetch`: `python skills/scrape-fetch/scripts/fetch.py <URL>` を実行しJSON取得
-- `web-fetch`: WebFetchツールでURLのコンテンツを取得し、記事情報をJSON形式に整形
-- `web-search`: WebSearchツールでURLを起点に検索し、記事情報をJSON形式に整形
+outsourcingスキルでCodex CLIにデータ取得を委託する:
+```
+python3 skills/outsourcing/scripts/dispatch.py digest-fetch "python3 skills/digest-fetch/scripts/fetch_all.py input_list.txt を実行し、標準出力のJSON結果をそのまま出力せよ"
+```
+結果は `./parcel/{timestamp}/digest-fetch.md` に保存される。そのJSONを読み取って次のステップに進む。
+
+### 方法B: 直接実行（フォールバック）
+
+```
+python3 skills/digest-fetch/scripts/fetch_all.py input_list.txt
+```
+全ソースから記事を取得し、category/langを付与したJSON配列を標準出力に出力する。
 
 取得失敗時はスキップしてログを出力する。
-
-取得した各記事JSONに、元エントリの `category` フィールドを付与する（例: `"category": "IT"`）。
 
 ## 3. Filter — get_data/block_dataフィルタリング
 
