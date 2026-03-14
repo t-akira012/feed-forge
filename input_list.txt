@@ -28,6 +28,7 @@ list: https://www.globaltimes.cn/rss/outbrain.xml
 conecter_type: rss-fetch
 category: 中国
 lang: en
+subcategory: "外交・台湾, 軍事・安全保障, 経済・テクノロジー, その他"
 get_data: "政治・外交・軍事・経済・テクノロジーに関する記事を取得する"
 block_data: "スポーツ・芸能は除外する"
 ---
@@ -35,6 +36,7 @@ list: https://thefederalist.com/feed/
 conecter_type: rss-fetch
 category: 米国
 lang: en
+subcategory: "イラン・中東戦争, 政治・選挙・司法, 経済・金融, 社会・文化, その他"
 get_data: "政治・社会・文化に関する記事を取得する"
 block_data: "なし"
 ---
@@ -56,6 +58,7 @@ list: https://www.aljazeera.com/xml/rss/all.xml
 conecter_type: rss-fetch
 category: 中東
 lang: en
+subcategory: "イラン・米国戦争, Israel・パレスチナ・レバノン, 湾岸諸国, その他"
 get_data: "政治・紛争・外交・経済に関する記事を取得する"
 block_data: "スポーツは除外する"
 ---

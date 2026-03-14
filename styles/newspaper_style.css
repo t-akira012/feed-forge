@@ -6,7 +6,6 @@
   --border: #c8c0b4;
   --accent: #8b0000;
   --sub: #555;
-  --ogp-h: 80px;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -42,79 +41,20 @@ h2 {
   margin: 36px 0 16px;
 }
 
-/* === With subcategory (IT): level2 > level3(grid) > level4(card) === */
-section.level2:has(section.level4) {
+/* Category block: level2 > level3(subcategory grid) > level4(card) */
+section.level2 {
   display: block;
 }
 
-section.level2:has(section.level4) > section.level3 {
+section.level3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
   margin-bottom: 24px;
 }
 
-section.level2:has(section.level4) > section.level3 > h3 {
+section.level3 > h3 {
   grid-column: 1 / -1;
-}
-
-/* === Without subcategory (中国/米国/中東): level2(grid) > level3(card) === */
-section.level2:not(:has(section.level4)) {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-}
-
-section.level2:not(:has(section.level4)) > h2 {
-  grid-column: 1 / -1;
-}
-
-section.level2:not(:has(section.level4)) > section.level3 {
-  display: block;
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  padding: 8px;
-  background: #fff;
-  overflow: hidden;
-}
-
-section.level2:not(:has(section.level4)) > section.level3 hr {
-  display: none;
-}
-
-section.level2:not(:has(section.level4)) > section.level3 > h3 {
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 1.5;
-  margin: 6px 0 0;
-  border-bottom: none;
-  color: var(--text);
-}
-
-section.level2:not(:has(section.level4)) > section.level3 > h3 a {
-  color: var(--text);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-section.level2:not(:has(section.level4)) > section.level3 > h3 a:hover {
-  color: var(--accent);
-}
-
-section.level2:not(:has(section.level4)) > section.level3 > p:has(img) {
-  margin: 0;
-  width: 100%;
-  background: #eee;
-  border-radius: 4px;
-  overflow: hidden;
-  aspect-ratio: 1200 / 630;
-}
-
-section.level2:not(:has(section.level4)) > section.level3 > p img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 h3 {
@@ -235,19 +175,13 @@ figcaption {
 header#title-block-header { display: none; }
 
 @media (max-width: 700px) {
-  section.level2:has(section.level4) > section.level3 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  section.level2:not(:has(section.level4)) {
+  section.level3 {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 480px) {
-  section.level2:has(section.level4) > section.level3 {
-    grid-template-columns: 1fr;
-  }
-  section.level2:not(:has(section.level4)) {
+  section.level3 {
     grid-template-columns: 1fr;
   }
 }
