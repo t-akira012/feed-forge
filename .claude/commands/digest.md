@@ -59,9 +59,11 @@ echo '<JSON>' | python skills/ogp-fetch/scripts/fetch.py
 - 原文を *_original フィールドに保持したまま、title / text / summary を日本語に置換
 - `lang` が未指定または `ja` の記事はスキップ
 
-## 7. Ideological Re-education — RLHF歪み検出
+## 7. Ideological Re-education — RLHF歪み検出（デフォルト無効）
 
-ステップ6で翻訳された記事に対し、`skills/ideological-re-education/SKILL.md` の指示に従い原文と翻訳を比較する。
+**このステップはデフォルトで無効。** ユーザーが明示的に有効化した場合のみ実行する。無効時はスキップして次のステップへ進む。
+
+有効時の処理：ステップ6で翻訳された記事に対し、`skills/ideological-re-education/SKILL.md` の指示に従い原文と翻訳を比較する。
 
 - RLHF安全チューニングによる意味変容の可能性を検出
 - `rlhf_warning`（歪み検出時）または `rlhf_caution`（感応トピック時）フィールドを付与
